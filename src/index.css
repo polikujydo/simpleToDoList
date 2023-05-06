@@ -1,0 +1,130 @@
+@import 'fonts.css';
+:root {
+    --mainColor: #EA5959;
+    --defaultGrey: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Nunito Sans Regular;
+    font-weight: 400;
+    background-color: var(--mainColor);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+}
+
+.todo {
+    padding: 32px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.todo__new {
+    display: flex;
+    margin: 16px 0 32px;
+    --size: 40px;
+}
+
+.todo__new input {
+    margin-right: 16px;
+    font-weight: 400;
+    padding: 0px 16px 0px 16px;
+    height: var(--size);
+    border: 1px solid var(--defaultGrey);
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.todo__add {
+    cursor: pointer;
+    line-height: calc(var(--size) * 0.95 );
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--size);
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    background-color: var(--mainColor);
+    color: #fff;
+    border: 1px solid var(--defaultGrey);
+}
+
+.todo__list > *:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.todo__task {
+    cursor: default;
+    font-size: 20px;
+    display: flex;
+    min-height: 20px;
+}
+
+.todo__task:hover .todo_task-del {
+    display: block;
+}
+
+.todo__task_complete .todo__task-text{
+    text-decoration: line-through;
+    color: var(--defaultGrey)
+}
+
+.todo__checkbox {
+    margin-right: 16px;
+}
+
+.todo__checkbox input {
+    display: none;
+}
+
+.todo__checkbox input:checked + div{
+    background-color: var(--mainColor);
+}
+
+.todo__checkbox input:checked + div:after{
+    display: block;
+}
+
+.todo__checkbox div {
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+    border: 1px solid var(--mainColor);
+    border-radius: 5px;
+    position: relative;
+    color:#fff
+}
+.todo__checkbox div:after{
+    content:'✓';
+    display: none;
+    position: absolute;
+    top: 1px;
+    left: 6px;
+    right: 0;
+    bottom: 0;
+}
+.todo__task-text {
+    font-size: 20px;
+}
+
+.todo_task-del {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+    color: var(--mainColor);
+    size: var(--task-size);
+    display: none;
+}
+
+
+
+
