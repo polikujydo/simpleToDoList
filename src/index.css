@@ -10,22 +10,26 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 32px;
+    font-size: 18px;
     font-family: Nunito Sans Regular;
     font-weight: 400;
     background-color: var(--mainColor);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 32px;
-    font-size: 18px;
 }
 
+/* MAIN STYLES */
+
 .todo {
-    padding: 32px;
-    background-color: #fff;
     width: 100%;
+    padding: 32px;
     border-radius: 16px;
+    background-color: #fff;
 }
+
+/* ADDING TASKS */
 
 .todo__new {
     display: flex;
@@ -34,42 +38,43 @@ body {
 }
 
 .todo__new input {
-    margin-right: 16px;
-    font-weight: 400;
-    padding: 0px 16px 0px 16px;
     height: var(--size);
-    border: 1px solid var(--defaultGrey);
-    border-radius: 5px;
+    margin-right: 16px;
+    padding: 0px 16px 0px 16px;
     flex-grow: 1;
+    border-radius: 5px;
+    font-weight: 400;
+    border: 1px solid var(--defaultGrey);
 }
 
 .todo__add {
     cursor: pointer;
-    line-height: calc(var(--size) * 0.95 );
     height: var(--size);
     width: var(--size);
-    border-radius: var(--size);
-    border: 1px solid #000;
     text-align: center;
     font-size: 30px;
-    font-weight: 400;
-    background-color: var(--mainColor);
+    line-height: calc(var(--size) * 0.95 );
     color: #fff;
+    background-color: var(--mainColor);
     border: 1px solid var(--defaultGrey);
+    border-radius: var(--size);
+    font-weight: 400;
 }
 
 .todo__list > *:not(:last-child) {
     margin-bottom: 15px;
 }
 
+/* ADDED TASKS  */
+
 .todo__task {
     cursor: default;
-    font-size: 20px;
     display: flex;
     min-height: 20px;
+    font-size: 20px;
 }
 
-.todo__task:hover .todo_task-del {
+.todo__task:hover .todo__task-del {
     display: block;
 }
 
@@ -95,12 +100,12 @@ body {
 }
 
 .todo__checkbox div {
+    position: relative;
     cursor: pointer;
     height: 28px;
     width: 28px;
     border: 1px solid var(--mainColor);
     border-radius: 5px;
-    position: relative;
     color:#fff
 }
 .todo__checkbox div:after{
@@ -116,13 +121,13 @@ body {
     font-size: 20px;
 }
 
-.todo_task-del {
+.todo__task-del {
+    display: none;
     cursor: pointer;
     margin-left: auto;
     margin-right: 0;
     color: var(--mainColor);
     size: var(--task-size);
-    display: none;
 }
 
 
